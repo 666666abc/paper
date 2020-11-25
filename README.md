@@ -3,8 +3,10 @@
 This repository is the implementation of 2021_paper_551 
 
 Requirements
-To install requirements:
-pip install -r requirements.txt
+
+  To install requirements:
+
+    pip install -r requirements.txt
 
 Repository Structure
   data/:processed data
