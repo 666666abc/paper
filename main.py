@@ -235,7 +235,7 @@ def main(args):
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default='Sub_Flickr', help='Dataset to use.')
+    parser.add_argument('--dataset', type=str, default='Cuneiform', help='Dataset to use.')
     parser.add_argument('--aggregation_times', type=int, default=2, help='Aggregation times')
     parser.add_argument('--hidden', type=str, default=16, help='number of hidden neurons for gnn')
     parser.add_argument('--epoch', type=int, default=1001, help='epoch number')
@@ -248,7 +248,7 @@ if __name__ == '__main__':
     parser.add_argument('--batch_size', type=int, default=6, help='number of graphs per batch')
     parser.add_argument('--update_step', type=int, default=2, help='number of task level adaptation steps')
     parser.add_argument('--spt_ratio', type=float, default=0.5, help='the ratio of support set in one graph')
-    parser.add_argument('--l2_coef', type=float, default=1, help='l2 regularization coefficient')
+    parser.add_argument('--l2_coef', type=float, default=0.01, help='l2 regularization coefficient')
     parser.add_argument('--seed', type=int, default=16, help='random seed')
 
     args = parser.parse_args()
