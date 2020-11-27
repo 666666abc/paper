@@ -248,7 +248,7 @@ if __name__ == '__main__':
     parser.add_argument('--batch_size', type=int, default=6, help='number of graphs per batch')
     parser.add_argument('--update_step', type=int, default=2, help='number of task level adaptation steps')
     parser.add_argument('--spt_ratio', type=float, default=0.5, help='the ratio of support set in one graph')
-    parser.add_argument('--l2_coef', type=float, default=0.001, help='l2 regularization coefficient')
+    parser.add_argument('--l2_coef', type=float, default=0.01, help='l2 regularization coefficient')
     parser.add_argument('--seed', type=int, default=16, help='random seed')
 
     args = parser.parse_args()
