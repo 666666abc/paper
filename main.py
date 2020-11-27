@@ -228,7 +228,7 @@ def main(args):
                                              batch_size=args.batch_size,
                                              dataset=args.dataset, train='test',
                                              training=False, epoch=Epoch)
-    print('\t Meta_Testing_Accuracy:{:.4f},loss{:.4f}'.format(test_acc, test_loss))
+    print('\t Testing_Accuracy:{:.4f},loss{:.4f}'.format(test_acc, test_loss))
 
 
 
