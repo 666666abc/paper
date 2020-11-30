@@ -40,5 +40,5 @@ class EarlyStopping:
 
     def save_checkpoint(self, val_acc, model):
         print(f'Validation acc increased ({self.val_acc_max:.4f} --> {val_acc:.4f}).  Saving model ...')
-        torch.save(model.state_dict(), './meta_checkpoint.pkl'.format(self.dataset))# 这里会存储迄今最优模型的参数
+        torch.save(model.state_dict(), './meta_checkpoint.pkl'.format(self.dataset))
         self.val_acc_max = val_acc
