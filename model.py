@@ -1,6 +1,3 @@
-# import sys
-# sys.path.append('../')
-
 import torch
 import numpy as np
 from torch import nn
@@ -16,20 +13,16 @@ from translation_sgc import Translation
 class Meta(nn.Module):
     def __init__(self, config, config_chemi, config_scal, config_trans, args, num_attri, label_dim):
         super(Meta, self).__init__()
-        self.lamda = args.lamda
-        self.chemical_lr = args.chemical_lr
-        self.scaling_lr = args.scaling_lr
-        self.translation_lr = args.translation_lr
+        self.task_lr = args.task_lr
         self.meta_lr = args.meta_lr
 
         self.net = Learner(config)
         self.chemical = Chemical(config_chemi)
         self.scaling = Scaling(config_scal, args, num_attri, label_dim)
         self.translation = Translation(config_trans, args, num_attri, label_dim)
-        self.meta_optim = optim.Adam(self.net.parameters(), lr=self.meta_lr)
-        self.chemi_optim = optim.Adam(self.chemical.parameters(), lr=self.chemical_lr)
-        self.scaling_optim = optim.Adam(self.scaling.parameters(), lr=self.scaling_lr)
-        self.translation_optim = optim.Adam(self.translation.parameters(), lr=self.translation_lr)
+        self.meta_optim = optim.Adam([{'params': self.net.parameters()}, {'params': self.chemical.parameters()},
+                                      {'params': self.scaling.parameters()}, {'params': self.translation.parameters()}],
+                                     lr=self.meta_lr)
         self.dataset = args.dataset
 
     def forward(self, x_spt, y_spt, x_qry, y_qry, chemical_bond_vectors, l2_coef,
@@ -41,7 +34,7 @@ class Meta(nn.Module):
         update_step = update_step
         Losses_q = [0 for _ in range(update_step + 1)]
         accs = 0
-        update_lr = self.lamda
+        update_lr = self.task_lr
         for j in range(int(task_num / batch_size) if task_num % batch_size == 0 else int(task_num / batch_size) + 1):
             start_idx = j * batch_size
             end_idx = min(start_idx + batch_size, task_num)
@@ -115,15 +108,8 @@ class Meta(nn.Module):
             loss_q = losses_q[-1] / batch_size
             if training == True:
                 self.meta_optim.zero_grad()
-                self.chemi_optim.zero_grad()
-                self.scaling_optim.zero_grad()
-                self.translation_optim.zero_grad()
                 loss_q.backward()
                 self.meta_optim.step()
-                self.chemi_optim.step()
-                self.scaling_optim.step()
-                self.translation_optim.step()
         acc = accs / task_num
         Loss_q = Losses_q[-1] / task_num
         return acc, Loss_q
-
