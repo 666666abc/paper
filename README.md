@@ -1,7 +1,3 @@
-551 
-
-This repository is the implementation of paper_551 
-
 Requirements
 
   To install requirements:
