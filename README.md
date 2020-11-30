@@ -7,7 +7,7 @@ Requirements
 Repository Structure
   data/:processed data
   
-  main.py: The main entrance of the model. You can change dataset name, l2 coefficient(note that for Sub_Flickr the l2_coef =1, and for other datasets, the l2_coef can be smaller value, like 0.01 ) etc in line 239--253.
+  main.py: The main entrance of the model. You can change dataset name, l2 coefficient(note that for Sub_Flickr the l2_coef =1, and for other datasets, the l2_coef can be smaller value, like 0.01 ) etc in line 237--248.
   
   model.py: The framework of our model
   
