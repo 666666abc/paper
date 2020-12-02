@@ -24,7 +24,7 @@ Repository Structure
 
 Train and test
 
-  To train and test the model in the paper:
+  To train and test the model in the paper(note that the following single file includes all the data split into training and testsing sets):
   
     python main.py
 
