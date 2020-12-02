@@ -11,7 +11,7 @@ Repository Structure
   
   model.py: The framework of our model
   
-  sub_data.py: The code to create social sub-graph data "Sub_Flickr"
+  sub_data.py: The code to create social sub-graph data "Sub_Flickr", 800 small ego-networks,  extracted from an online image sharing social network. Note that if we want to use "Sub_Flickr" as the dataset we don't have the 'data'directory(the processed data), we need to run this file before running main.py. 
   
   tudata.py, mydataset.py : Data preprocessing
   
@@ -24,7 +24,7 @@ Repository Structure
 
 Train and test
 
-  To train and test the model in the paper(note that the following single file includes all the data split into training and testsing set):
+  To train and test the model in the paper(note that: 1)the following single file includes all the data split into training and testsing set; 2) we just need run this file and all things can be done, including data preprocessing, training and testing):
   
     python main.py
 
