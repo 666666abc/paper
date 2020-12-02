@@ -11,7 +11,7 @@ Repository Structure
   
   model.py: The framework of our model
   
-  sub_data.py: The code to create social sub-graph data "Sub_Flickr", 800 small ego-networks,  extracted from an online image sharing social network. Note that if we want to use "Sub_Flickr" as the dataset we don't have the 'data'directory(the processed data), we need to run this file before running main.py. 
+  sub_data.py: The code to create social sub-graph data "Sub_Flickr", 800 small ego-networks,  extracted from an online image sharing social network. Note that if we want to use "Sub_Flickr" as the dataset and we don't have the 'data'directory(the processed data), we need to run this file before running main.py. 
   
   tudata.py, mydataset.py : Data preprocessing
   
