@@ -114,7 +114,7 @@ def main(args):
             reformed_labels_list.append(labels.to(device))
             adjs_list.append(graph_adj_list[i].to(device))
             adj = to_scipy_sparse_matrix(graph_adj_list[i],
-                                         num_nodes=len(labels))  # there are some graphs having isolated points
+                                         num_nodes=len(labels))  
             adj = adj + adj.T.multiply(adj.T > adj) - adj.multiply(adj.T > adj)
             adj = aug_normalized_adjacency(adj)
             adj = sparse_mx_to_torch_sparse_tensor(adj).float()
