@@ -22,9 +22,9 @@ Repository Structure
   earlystopping.py: The earlystopping function
 
 
-Train
+Train and test
 
-  To train the model in the paper:
+  To train and test the model in the paper:
   
     python main.py
 
