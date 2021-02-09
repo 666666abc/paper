@@ -3,8 +3,8 @@ import numpy as np
 from torch import nn
 from torch.nn import functional as F
 from torch import optim
-from learner_2 import Learner_1
-from learner_1 import Learner_2
+from learner_1 import Learner_1
+from learner_2 import Learner_2
 
 from sklearn import metrics
 from chemical import Chemical
