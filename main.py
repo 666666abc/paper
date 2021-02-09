@@ -247,7 +247,7 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--dataset', type=str, default='Sub_Yelp', help='Dataset to use, including, Sub_Flickr, Sub_Yelp, Cuneiform, COX2, DHFR.')
+    parser.add_argument('--dataset', type=str, default='Cuneiform', help='Dataset to use, including, Sub_Flickr, Sub_Yelp, Cuneiform, COX2, DHFR.')
     parser.add_argument('--aggregation_times', type=int, default=2, help='Aggregation times')
     parser.add_argument('--hidden', type=str, default=16, help='number of hidden neurons for gnn')
     parser.add_argument('--epoch', type=int, default=201, help='epoch number')
