@@ -19,7 +19,7 @@ The repository is organised as follows:
 
     pip install -r requirements.txt
 
-Train and test
+## Train and test
 
   To train and test the model in the paper(note that: (1)the following single file includes all the data split into training and testsing set; (2) we just need to run this single file and all things can be done, including data preprocessing, training and testing):
   
